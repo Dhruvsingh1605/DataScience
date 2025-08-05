@@ -1,0 +1,240 @@
+❌ 1. Free-form consulting or open-ended advice
+Example:
+
+"What game should I invest in?"
+
+"Tell me about trends in racing games."
+
+"Why are JRPGs declining?"
+
+🧠 Why it fails:
+
+No clear action/target/filters.
+
+These are opinion-based or require multi-hop reasoning and/or temporal context.
+
+Gemini will either hallucinate JSON or output irrelevant structure.
+
+✅ Fix: Route such queries to a consulting module (LLM-based answer generation or retrieval QA).
+
+❌ 2. Predictive / Forecasting questions
+Example:
+
+"Will action games sell more next year?"
+
+"Predict sales in 2026 for Nintendo games."
+
+🧠 Why it fails:
+
+No "future" data in tabular dataset.
+
+Requires time-series or ML forecasting model — which JSON query structure cannot express.
+
+✅ Fix: Route to a forecasting engine (e.g., Prophet, LSTM, ARIMA, or sklearn pipeline).
+
+❌ 3. Logical or comparative reasoning
+Example:
+
+"Are sports games more popular than racing games?"
+
+"Which platform grew the most over the last decade?"
+
+"Did Nintendo outperform Sony in the EU market?"
+
+🧠 Why it fails:
+
+Needs comparison across filtered groups, multi-stage aggregation, or delta calculations.
+
+Gemini may give you one valid filter/group_by, but not both sides of comparison.
+
+✅ Fix: Use a reasoning layer that computes multiple queries and compares them post hoc.
+
+❌ 4. Ambiguous or underspecified questions
+Example:
+
+"Show me top games."
+
+"Best-selling titles?"
+
+"How is sales going?"
+
+🧠 Why it fails:
+
+Lacks filters, timeframe, region — the parser might default to global sales, all-time, no filter… or guess incorrectly.
+
+✅ Fix: Add a query clarification layer or ask Gemini to request clarification if ambiguity is detected.
+
+❌ 5. Non-column-based questions
+Example:
+
+"What does the 'Other_Sales' column mean?"
+
+"Who created this dataset?"
+
+"How many missing values are there?"
+
+🧠 Why it fails:
+
+These are metadata, documentation, or data-quality questions — not analytical queries.
+
+✅ Fix: Route to a data-docs assistant or schema documentation service.
+
+❌ 6. Multistep / multi-action queries
+Example:
+
+"Show me the average global sales of action games, then compare it with strategy games."
+
+"Give me top 5 genres in 2009 and their total sales."
+
+🧠 Why it fails:
+
+One action per JSON output: can't express sequence or composition.
+
+You’ll get either action A or B — not both.
+
+✅ Fix: Use a multi-query planner that chains or splits the input intelligently.
+
+❌ 7. Queries involving external knowledge
+Example:
+
+"Did FIFA outsell Call of Duty in the World Cup year?"
+
+"Was 2008 a recession year and did it affect game sales?"
+
+🧠 Why it fails:
+
+These questions mix internal data with external world knowledge.
+
+Your system has no access to real-world events or trends.
+
+✅ Fix: Integrate with a knowledge graph or external facts LLM.
+
+✅ Summary Table
+Type	Supported?	Needs Extra Module
+Simple analytical queries	✅	No
+Grouped aggregations	✅	No
+Forecasting	❌	Time series model
+Logical comparisons	❌	Dual query & comparator
+Free-form consulting	❌	LLM QA / consulting agent
+Metadata questions	❌	Schema doc assistant
+Ambiguous prompts	❌	Clarifier or reask loop
+Multi-step reasoning	❌	Query planner
+External knowledge queries	❌	Web/knowledge augmentation
+
+✅ Your Next Step
+Now that you know what the system can’t do, I suggest building a query router that:
+
+Classifies query type (analytical, prediction, consulting, etc.).
+
+Routes to the correct backend module.
+
+Fallbacks gracefully when Gemini can’t parse the query.
+
+Let me know if you want a lightweight classifier or OpenRouter + prompt router for this.
+
+
+
+
+
+
+
+✅ Sales Queries
+"What are the total global sales of action games?"
+
+"How many units did Nintendo sell in Europe in 2012?"
+
+"What was the highest selling game in Japan in 2010?"
+
+"Which publisher had the most sales in North America in 2011?"
+
+"Give me global sales of sports games in 2008."
+
+✅ Ranking & Top-K
+"Top 5 best-selling games globally in 2009?"
+
+"Top 3 genres by sales in EU in 2014?"
+
+"Which game sold the most in Japan?"
+
+"Who are the top 10 publishers in 2015 by global sales?"
+
+✅ Filtering by Year/Genre/Platform/Region
+"Sales of racing games on PS2 in 2007?"
+
+"How did Xbox 360 perform in Europe in 2009?"
+
+"What was the NA sales for shooter games released in 2011?"
+
+✅ Grouping + Aggregation
+"Total sales per genre in 2013?"
+
+"Which platform had the most games in 2012?"
+
+"Compare average sales across all genres."
+
+✅ Counts and Frequencies
+"How many games were released in 2005?"
+
+"Number of games by Nintendo in 2010?"
+
+"How many sports games were released on PS3?"
+
+✅ Max/Min Queries
+"Which genre had the highest global sales in 2011?"
+
+"Who was the top publisher in North America in 2014?"
+
+"Which game ranked #1 globally in 2009?"
+
+✅ Platform Performance
+"Best performing console in Japan overall?"
+
+"Sales distribution for Xbox One vs PS4?"
+
+"Which console dominated in EU in 2013?"
+
+✅ Yearly Trends
+"What were the global sales every year?"
+
+"Which year had the highest number of releases?"
+
+"Compare global sales in 2008 vs 2009."
+
+🧠 Bonus: Example of Synonym Handling (already works)
+These are interpreted correctly due to injected synonyms:
+
+"Launch year of GTA V" → Year
+
+"Total worldwide sales of FIFA" → Global_Sales
+
+"Console with top performance in JP" → Platform, region=JP_Sales
+
+❌ WHAT IT CANNOT DO (yet, unless extended)
+These are out of scope for current capabilities, unless you add prediction/forecasting modules:
+
+"Will Action games sell more next year?" → Needs time-series forecast
+
+"Recommend a genre to publish in 2025?" → Needs ML + reasoning
+
+"Compare trends of shooter vs sports from 2000 to 2020" → Needs line chart generator or NLP-to-plot module
+
+🧪 Raw Input Examples That Should Work
+"Which platform had the highest global sales in 2010?"
+
+"What was the total sales of Nintendo-published games in North America?"
+
+"Top 5 games by sales in Europe in 2009?"
+
+"How many games were released by Ubisoft in 2011?"
+
+"Show sales by genre for games released in 2005"
+
+"Compare global sales of sports and action games"
+
+"Which genre performed best in Japan?"
+
+"Games released on PS3 in 2008 with over 1 million sales globally"
+
+"Total number of games released each year"
+
+"Best performing publisher overall?"

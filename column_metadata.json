@@ -1,0 +1,35 @@
+{
+  "columns": {
+    "Rank": "Global rank of the game by sales",
+    "Name": "Title of the video game",
+    "Platform": "Platform or console (e.g., PS4, Xbox 360)",
+    "Year": "Year the game was released (integer)",
+    "Genre": "Genre of the game (e.g., Action, Sports)",
+    "Publisher": "Company that published the game",
+    "NA_Sales": "Sales in North America (millions)",
+    "EU_Sales": "Sales in Europe (millions)",
+    "JP_Sales": "Sales in Japan (millions)",
+    "Other_Sales": "Sales in other regions (millions)",
+    "Global_Sales": "Total global sales (millions)"
+  },
+  "column_types": {
+    "Rank": "int",
+    "Name": "str",
+    "Platform": "str",
+    "Year": "int",
+    "Genre": "str",
+    "Publisher": "str",
+    "NA_Sales": "float",
+    "EU_Sales": "float",
+    "JP_Sales": "float",
+    "Other_Sales": "float",
+    "Global_Sales": "float"
+  },
+  "column_synonyms": {
+    "Global_Sales": ["total sales", "worldwide sales", "global performance"],
+    "Year": ["release year", "launch year", "year of release"],
+    "Genre": ["game type", "category"],
+    "Publisher": ["company", "publisher company"],
+    "Platform": ["console", "system"]
+  }
+}
