@@ -1,0 +1,329 @@
+2025-08-05 14:37:08,640 | INFO | 📥 Received query: Most sold genre in 2012
+2025-08-05 14:37:45,092 | DEBUG | ✅ Parsed query: {'action': 'max', 'target': 'Global_Sales', 'filters': [{'column': 'Year', 'op': '=', 'value': 2012}], 'group_by': 'Genre', 'sort': None, 'top_k': None}
+2025-08-05 14:37:45,092 | DEBUG | Loading dataset from CSV...
+2025-08-05 14:37:45,110 | DEBUG | Loaded dataset with shape: (16598, 11)
+2025-08-05 14:37:45,111 | DEBUG | 🔍 Initial dataframe shape: (16598, 11)
+2025-08-05 14:37:45,111 | DEBUG | 🧪 Applying filter: Year = 2012
+2025-08-05 14:37:45,111 | WARNING | ⚠️ Unsupported filter operation: =
+2025-08-05 14:37:45,111 | DEBUG | ✅ Filtered dataframe shape: (16598, 11)
+2025-08-05 14:37:45,111 | DEBUG | 🔗 Grouping by 'Genre', applying action 'max' on 'Global_Sales'
+2025-08-05 14:37:45,112 | DEBUG | ✅ Final grouped result:
+2025-08-05 14:37:45,112 | DEBUG | Genre
+Action          21.40
+Adventure       11.18
+Fighting        13.04
+Misc            29.02
+Platform        40.24
+Puzzle          30.26
+Racing          35.82
+Role-Playing    31.37
+Shooter         28.31
+Simulation      24.76
+Sports          82.74
+Strategy         5.45
+Name: Global_Sales, dtype: float64
+2025-08-05 14:37:45,114 | DEBUG | ✅ Query executed successfully, result size: N/A
+2025-08-05 14:38:07,991 | INFO | 📥 Received query: When was Grad Theft auto released
+2025-08-05 14:38:15,880 | DEBUG | ✅ Parsed query: {'action': 'distinct', 'target': 'Year', 'filters': [{'column': 'Name', 'op': '=', 'value': 'Grad Theft auto'}], 'group_by': None, 'sort': None, 'top_k': None}
+2025-08-05 14:38:15,881 | DEBUG | 🔍 Initial dataframe shape: (16598, 11)
+2025-08-05 14:38:15,881 | DEBUG | 🧪 Applying filter: Name = Grad Theft auto
+2025-08-05 14:38:15,881 | WARNING | ⚠️ Unsupported filter operation: =
+2025-08-05 14:38:15,881 | DEBUG | ✅ Filtered dataframe shape: (16598, 11)
+2025-08-05 14:38:15,881 | DEBUG | 📈 Performing 'distinct' on column 'Year' without grouping
+2025-08-05 14:38:15,881 | ERROR | ❌ Unsupported action: distinct
+2025-08-05 14:38:15,881 | DEBUG | ✅ Query executed successfully, result size: N/A
+2025-08-05 14:38:39,989 | INFO | 📥 Received query: When was Grand Theft auto released
+2025-08-05 14:38:52,856 | DEBUG | ✅ Parsed query: {'action': 'distinct', 'target': 'Year', 'filters': [{'column': 'Name', 'op': '=', 'value': 'Grand Theft Auto'}], 'group_by': None, 'sort': None, 'top_k': None}
+2025-08-05 14:38:52,856 | DEBUG | 🔍 Initial dataframe shape: (16598, 11)
+2025-08-05 14:38:52,856 | DEBUG | 🧪 Applying filter: Name = Grand Theft Auto
+2025-08-05 14:38:52,857 | WARNING | ⚠️ Unsupported filter operation: =
+2025-08-05 14:38:52,857 | DEBUG | ✅ Filtered dataframe shape: (16598, 11)
+2025-08-05 14:38:52,857 | DEBUG | 📈 Performing 'distinct' on column 'Year' without grouping
+2025-08-05 14:38:52,857 | ERROR | ❌ Unsupported action: distinct
+2025-08-05 14:38:52,857 | DEBUG | ✅ Query executed successfully, result size: N/A
+2025-08-05 14:50:17,999 | INFO | 📥 Received query: What are the total global sales of all games?
+2025-08-05 14:50:32,008 | WARNING | ❌ Query parsing failed: Could not parse structured query: 3 validation errors for ParsedQuery
+group_by
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+sort
+  Input should be a valid dictionary [type=dict_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.11/v/dict_type
+top_k
+  Input should be a valid integer [type=int_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.11/v/int_type
+2025-08-05 14:52:24,902 | INFO | 📥 Received query: What are the total global sales of all games?
+2025-08-05 14:52:30,639 | WARNING | ❌ Query parsing failed: Could not parse structured query: 1 validation error for ParsedQuery
+group_by
+  Input should be a valid string [type=string_type, input_value=[], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+2025-08-05 14:52:46,886 | INFO | 📥 Received query: What are the total global sales of all games
+2025-08-05 14:54:16,209 | WARNING | ❌ Query parsing failed: Could not parse structured query: 1 validation error for ParsedQuery
+group_by
+  Input should be a valid string [type=string_type, input_value=[], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+2025-08-05 14:59:22,847 | INFO | 📥 Received query: What is the total global sales of all games
+2025-08-05 14:59:36,231 | DEBUG | ✅ Parsed query: {'action': 'sum', 'target': 'Global_Sales', 'filters': [], 'group_by': None, 'sort': None, 'top_k': None}
+2025-08-05 14:59:36,231 | DEBUG | Loading dataset from CSV...
+2025-08-05 14:59:36,251 | DEBUG | Loaded dataset with shape: (16598, 11)
+2025-08-05 14:59:36,252 | DEBUG | 🔍 Initial dataframe shape: (16598, 11)
+2025-08-05 14:59:36,252 | DEBUG | ✅ Filtered dataframe shape: (16598, 11)
+2025-08-05 14:59:36,252 | DEBUG | 📈 Performing 'sum' on column 'Global_Sales' without grouping
+2025-08-05 14:59:36,253 | DEBUG | ✅ Result: Global_Sales = 8920.44
+2025-08-05 14:59:36,253 | DEBUG | ✅ Query executed successfully, result size: N/A
+2025-08-05 15:00:04,468 | INFO | 📥 Received query: When was Grand theft auto released?
+2025-08-05 15:00:16,287 | DEBUG | ✅ Parsed query: {'action': 'distinct', 'target': 'Year', 'filters': [{'column': 'Name', 'op': '=', 'value': 'Grand theft auto'}], 'group_by': None, 'sort': None, 'top_k': None}
+2025-08-05 15:00:16,288 | DEBUG | 🔍 Initial dataframe shape: (16598, 11)
+2025-08-05 15:00:16,288 | DEBUG | 🧪 Applying filter: Name = Grand theft auto
+2025-08-05 15:00:16,289 | DEBUG | ✅ Filtered dataframe shape: (0, 11)
+2025-08-05 15:00:16,289 | DEBUG | 📈 Performing 'distinct' on column 'Year' without grouping
+2025-08-05 15:00:16,290 | DEBUG | ✅ Result: Year = []
+2025-08-05 15:00:16,290 | DEBUG | ✅ Query executed successfully, result size: N/A
+2025-08-05 15:01:19,556 | INFO | 📥 Received query: When was Mario Kart Wiireleased?
+2025-08-05 15:01:19,884 | WARNING | ❌ Query parsing failed: Gemini error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 40
+}
+]
+2025-08-05 15:01:25,956 | INFO | 📥 Received query: When was Mario Kart Wii released?
+2025-08-05 15:01:26,275 | WARNING | ❌ Query parsing failed: Gemini error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 33
+}
+]
+2025-08-05 15:01:42,029 | INFO | 📥 Received query: When was Mario Kart Wii released?
+2025-08-05 15:01:42,326 | WARNING | ❌ Query parsing failed: Gemini error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-1.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 50
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 17
+}
+]
+2025-08-05 15:15:58,727 | INFO | 📥 Received query: What is the global sales of all the games
+2025-08-05 15:15:58,729 | DEBUG | Starting new HTTPS connection (1): api-inference.huggingface.co:443
+2025-08-05 15:15:59,134 | DEBUG | https://api-inference.huggingface.co:443 "POST /models/deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B HTTP/1.1" 404 9
+2025-08-05 15:15:59,134 | WARNING | ❌ Query parsing failed: DeepSeek error: 404 Client Error: Not Found for url: https://api-inference.huggingface.co/models/deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B
+2025-08-05 15:18:46,336 | INFO | 📥 Received query: What is the global sales of all the games
+2025-08-05 15:18:46,338 | DEBUG | Starting new HTTPS connection (1): api.groq.com:443
+2025-08-05 15:18:46,842 | DEBUG | https://api.groq.com:443 "POST /openai/v1/chat/completions HTTP/1.1" 200 None
+2025-08-05 15:18:46,843 | DEBUG | ✅ Parsed query: {'action': 'sum', 'target': 'Global_Sales', 'filters': [], 'group_by': None, 'sort': {}, 'top_k': None}
+2025-08-05 15:18:46,843 | DEBUG | Loading dataset from CSV...
+2025-08-05 15:18:46,866 | DEBUG | Loaded dataset with shape: (16598, 11)
+2025-08-05 15:18:46,867 | DEBUG | 🔍 Initial dataframe shape: (16598, 11)
+2025-08-05 15:18:46,867 | DEBUG | ✅ Filtered dataframe shape: (16598, 11)
+2025-08-05 15:18:46,867 | DEBUG | 📈 Performing 'sum' on column 'Global_Sales' without grouping
+2025-08-05 15:18:46,868 | DEBUG | ✅ Result: Global_Sales = 8920.44
+2025-08-05 15:18:46,869 | DEBUG | ✅ Query executed successfully, result size: N/A
+2025-08-05 15:19:03,830 | INFO | 📥 Received query: When was Mario released?
+2025-08-05 15:19:03,831 | DEBUG | Starting new HTTPS connection (1): api.groq.com:443
+2025-08-05 15:19:04,326 | DEBUG | https://api.groq.com:443 "POST /openai/v1/chat/completions HTTP/1.1" 200 None
+2025-08-05 15:19:04,328 | DEBUG | ✅ Parsed query: {'action': 'filter', 'target': 'Year', 'filters': [{'column': 'Name', 'op': 'contains', 'value': 'Mario'}], 'group_by': None, 'sort': None, 'top_k': None}
+2025-08-05 15:19:04,328 | DEBUG | 🔍 Initial dataframe shape: (16598, 11)
+2025-08-05 15:19:04,328 | DEBUG | 🧪 Applying filter: Name contains Mario
+2025-08-05 15:19:04,328 | WARNING | ⚠️ Unsupported filter operation: contains
+2025-08-05 15:19:04,329 | DEBUG | ✅ Query executed successfully, result size: N/A
+2025-08-05 15:19:39,549 | INFO | 📥 Received query: When was Wii Sports Resort released?
+2025-08-05 15:19:39,551 | DEBUG | Starting new HTTPS connection (1): api.groq.com:443
+2025-08-05 15:19:40,056 | DEBUG | https://api.groq.com:443 "POST /openai/v1/chat/completions HTTP/1.1" 200 None
+2025-08-05 15:19:40,057 | DEBUG | ✅ Parsed query: {'action': 'get', 'target': 'Year', 'filters': [{'column': 'Name', 'op': 'eq', 'value': 'Wii Sports Resort'}], 'group_by': None, 'sort': None, 'top_k': None}
+2025-08-05 15:19:40,057 | DEBUG | 🔍 Initial dataframe shape: (16598, 11)
+2025-08-05 15:19:40,057 | DEBUG | 🧪 Applying filter: Name eq Wii Sports Resort
+2025-08-05 15:19:40,057 | WARNING | ⚠️ Unsupported filter operation: eq
+2025-08-05 15:19:40,058 | DEBUG | ✅ Query executed successfully, result size: N/A
+2025-08-05 15:24:49,277 | INFO | 📥 Received query: When was Super Mario Bros released
+2025-08-05 15:24:49,279 | DEBUG | Starting new HTTPS connection (1): api.groq.com:443
+2025-08-05 15:24:49,749 | DEBUG | https://api.groq.com:443 "POST /openai/v1/chat/completions HTTP/1.1" 200 None
+2025-08-05 15:24:49,750 | DEBUG | ✅ Parsed query: {'action': 'lookup', 'target': 'Year', 'filters': [{'column': 'Name', 'op': '=', 'value': 'Super Mario Bros'}], 'group_by': None, 'sort': None, 'top_k': None}
+2025-08-05 15:24:49,750 | DEBUG | Loading dataset from CSV...
+2025-08-05 15:24:49,782 | DEBUG | Loaded dataset with shape: (16598, 11)
+2025-08-05 15:24:49,783 | DEBUG | 🔍 Initial dataframe shape: (16598, 11)
+2025-08-05 15:24:49,783 | DEBUG | 🧪 Applying filter: Name = Super Mario Bros
+2025-08-05 15:24:49,788 | DEBUG | ✅ Filtered dataframe shape: (0, 11)
+2025-08-05 15:24:49,789 | DEBUG | 📈 Performing 'lookup' on column 'Year' without grouping
+2025-08-05 15:24:49,789 | ERROR | ❌ Unsupported action: lookup
+2025-08-05 15:24:49,789 | DEBUG | ✅ Query executed successfully, result size: N/A
+2025-08-05 15:27:50,710 | INFO | 📥 Received query: When was Super Mario Bros released
+2025-08-05 15:27:50,711 | DEBUG | Starting new HTTPS connection (1): api.groq.com:443
+2025-08-05 15:27:51,304 | DEBUG | https://api.groq.com:443 "POST /openai/v1/chat/completions HTTP/1.1" 200 None
+2025-08-05 15:27:51,305 | DEBUG | ✅ Parsed query: {'action': 'lookup', 'target': 'Year', 'filters': [{'column': 'Name', 'op': 'EQ', 'value': 'Super Mario Bros'}], 'group_by': None, 'sort': None, 'top_k': None}
+2025-08-05 15:27:51,305 | DEBUG | Loading dataset from CSV...
+2025-08-05 15:27:51,326 | DEBUG | Loaded dataset with shape: (16598, 11)
+2025-08-05 15:27:51,326 | DEBUG | 🔍 Initial dataframe shape: (16598, 11)
+2025-08-05 15:27:51,326 | DEBUG | 🧪 Applying filter: Name EQ Super Mario Bros
+2025-08-05 15:27:51,326 | WARNING | ⚠️ Unsupported filter operation: EQ
+2025-08-05 15:27:51,327 | DEBUG | ✅ Query executed successfully, result size: N/A
+2025-08-05 15:29:21,501 | INFO | 📥 Received query: When was Super Mario Bros released
+2025-08-05 15:29:21,503 | DEBUG | Starting new HTTPS connection (1): api.groq.com:443
+2025-08-05 15:29:22,128 | DEBUG | https://api.groq.com:443 "POST /openai/v1/chat/completions HTTP/1.1" 200 None
+2025-08-05 15:29:22,129 | DEBUG | ✅ Parsed query: {'action': 'lookup', 'target': 'Year', 'filters': [{'column': 'Name', 'op': '=', 'value': 'Super Mario Bros'}], 'group_by': None, 'sort': None, 'top_k': None}
+2025-08-05 15:29:22,129 | DEBUG | Loading dataset from CSV...
+2025-08-05 15:29:22,149 | DEBUG | Loaded dataset with shape: (16598, 11)
+2025-08-05 15:29:22,150 | DEBUG | 🔍 Initial dataframe shape: (16598, 11)
+2025-08-05 15:29:22,150 | DEBUG | 🧪 Applying filter: Name = Super Mario Bros
+2025-08-05 15:29:22,152 | DEBUG | ✅ Filtered dataframe shape: (0, 11)
+2025-08-05 15:29:22,152 | DEBUG | 📈 Performing 'lookup' on column 'Year' without grouping
+2025-08-05 15:29:22,152 | ERROR | ❌ Unsupported action: lookup
+2025-08-05 15:29:22,152 | DEBUG | ✅ Query executed successfully, result size: N/A
+2025-08-05 15:33:11,541 | INFO | 📥 Received query: When was Mario Bros released
+2025-08-05 15:33:11,543 | DEBUG | Starting new HTTPS connection (1): api.groq.com:443
+2025-08-05 15:33:12,050 | DEBUG | https://api.groq.com:443 "POST /openai/v1/chat/completions HTTP/1.1" 200 None
+2025-08-05 15:33:12,051 | DEBUG | ✅ Parsed query: {'action': 'filter', 'target': 'Year', 'filters': [{'column': 'Name', 'op': 'eq', 'value': 'Mario Bros'}], 'group_by': None, 'sort': None, 'top_k': None}
+2025-08-05 15:33:12,051 | DEBUG | Loading dataset from CSV...
+2025-08-05 15:33:12,072 | DEBUG | Loaded dataset with shape: (16598, 11)
+2025-08-05 15:33:12,072 | DEBUG | 🔍 Initial dataframe shape: (16598, 11)
+2025-08-05 15:33:12,073 | DEBUG | 🧪 Applying filter: Name eq Mario Bros
+2025-08-05 15:33:12,073 | WARNING | ⚠️ Unsupported filter operation: eq
+2025-08-05 15:33:12,073 | DEBUG | ✅ Query executed successfully, result size: N/A
+2025-08-05 15:38:21,079 | INFO | 📥 Received query: when was Mario bros released
+2025-08-05 15:38:21,082 | DEBUG | Starting new HTTPS connection (1): api.groq.com:443
+2025-08-05 15:38:21,763 | DEBUG | https://api.groq.com:443 "POST /openai/v1/chat/completions HTTP/1.1" 200 None
+2025-08-05 15:38:21,764 | DEBUG | ✅ Parsed query: {'action': 'filter', 'target': 'Year', 'filters': [{'column': 'Name', 'op': 'eq', 'value': 'Mario Bros'}], 'group_by': None, 'sort': None, 'top_k': None}
+2025-08-05 15:38:21,764 | DEBUG | Loading dataset from CSV...
+2025-08-05 15:38:21,782 | DEBUG | Loaded dataset with shape: (16598, 11)
+2025-08-05 15:38:21,783 | DEBUG | 🔍 Initial dataframe shape: (16598, 11)
+2025-08-05 15:38:21,783 | DEBUG | 🧪 Applying filter: Name eq Mario Bros
+2025-08-05 15:38:21,783 | WARNING | ⚠️ Unsupported filter operation: eq
+2025-08-05 15:38:21,783 | DEBUG | ✅ Query executed successfully, result size: N/A
+2025-08-05 15:39:17,917 | INFO | 📥 Received query: When was Mario Bros released
+2025-08-05 15:39:17,919 | DEBUG | Starting new HTTPS connection (1): api.groq.com:443
+2025-08-05 15:39:18,399 | DEBUG | https://api.groq.com:443 "POST /openai/v1/chat/completions HTTP/1.1" 200 None
+2025-08-05 15:39:18,400 | DEBUG | ✅ Parsed query: {'action': 'lookup', 'target': 'Year', 'filters': [{'column': 'Name', 'op': 'eq', 'value': 'Mario Bros'}], 'group_by': None, 'sort': None, 'top_k': None}
+2025-08-05 15:39:18,400 | DEBUG | Loading dataset from CSV...
+2025-08-05 15:39:18,423 | DEBUG | Loaded dataset with shape: (16598, 11)
+2025-08-05 15:39:18,425 | DEBUG | 🔍 Initial dataframe shape: (16598, 11)
+2025-08-05 15:39:18,425 | DEBUG | 🧪 Applying filter: Name eq Mario Bros
+2025-08-05 15:39:18,427 | DEBUG | ✅ Filtered dataframe shape: (0, 11)
+2025-08-05 15:39:18,428 | DEBUG | 📈 Performing 'lookup' on column 'Year' without grouping
+2025-08-05 15:39:18,428 | ERROR | ❌ Unsupported action: lookup
+2025-08-05 15:39:18,428 | DEBUG | ✅ Query executed successfully, result size: N/A
+2025-08-05 15:39:42,340 | INFO | 📥 Received query: Net sales of action games
+2025-08-05 15:39:42,341 | DEBUG | Starting new HTTPS connection (1): api.groq.com:443
+2025-08-05 15:39:42,797 | DEBUG | https://api.groq.com:443 "POST /openai/v1/chat/completions HTTP/1.1" 200 None
+2025-08-05 15:39:42,798 | DEBUG | ✅ Parsed query: {'action': 'sum', 'target': 'Global_Sales', 'filters': [{'column': 'Genre', 'op': 'EQ', 'value': 'Action'}], 'group_by': None, 'sort': None, 'top_k': None}
+2025-08-05 15:39:42,798 | DEBUG | 🔍 Initial dataframe shape: (16598, 11)
+2025-08-05 15:39:42,798 | DEBUG | 🧪 Applying filter: Genre EQ Action
+2025-08-05 15:39:42,800 | DEBUG | ✅ Filtered dataframe shape: (3316, 11)
+2025-08-05 15:39:42,800 | DEBUG | 📈 Performing 'sum' on column 'Global_Sales' without grouping
+2025-08-05 15:39:42,800 | DEBUG | ✅ Query executed successfully, result size: N/A
+2025-08-05 15:39:58,211 | INFO | 📥 Received query: publisher of Mario
+2025-08-05 15:39:58,212 | DEBUG | Starting new HTTPS connection (1): api.groq.com:443
+2025-08-05 15:39:59,243 | DEBUG | https://api.groq.com:443 "POST /openai/v1/chat/completions HTTP/1.1" 200 None
+2025-08-05 15:39:59,244 | WARNING | ❌ Query parsing failed: Could not parse structured query: 1 validation error for ParsedQuery
+target
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+2025-08-05 15:40:28,764 | INFO | 📥 Received query: publisher of Super Mario Bros
+2025-08-05 15:40:28,765 | DEBUG | Starting new HTTPS connection (1): api.groq.com:443
+2025-08-05 15:40:29,294 | DEBUG | https://api.groq.com:443 "POST /openai/v1/chat/completions HTTP/1.1" 200 None
+2025-08-05 15:40:29,295 | WARNING | ❌ Query parsing failed: Could not parse structured query: 1 validation error for ParsedQuery
+target
+  Input should be a valid string [type=string_type, input_value=None, input_type=NoneType]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type
+2025-08-05 15:53:37,821 | INFO | 📥 Received query: Which game was sold most in 2012
+2025-08-05 15:53:37,822 | DEBUG | Starting new HTTPS connection (1): api.groq.com:443
+2025-08-05 15:53:38,281 | DEBUG | https://api.groq.com:443 "POST /openai/v1/chat/completions HTTP/1.1" 200 None
+2025-08-05 15:53:38,282 | DEBUG | Loading dataset from CSV...
+2025-08-05 15:53:38,302 | DEBUG | Loaded dataset with shape: (16598, 11)
+2025-08-05 15:53:38,302 | DEBUG | 🔍 Initial dataframe shape: (16598, 11)
+2025-08-05 15:53:38,303 | DEBUG | 🧪 Applying filter: Year = 2012
+2025-08-05 15:53:38,304 | DEBUG | ✅ Filtered dataframe shape: (657, 11)
+2025-08-05 15:53:38,304 | DEBUG | 📈 Performing 'max' on column 'Global_Sales' without grouping
+2025-08-05 15:53:38,304 | DEBUG | ✅ Query executed successfully. Result length: N/A
+2025-08-05 16:00:33,837 | INFO | 📥 Received query: Most is the most sold game in 2012
+2025-08-05 16:00:33,876 | DEBUG | Starting new HTTPS connection (1): api.groq.com:443
+2025-08-05 16:00:34,965 | DEBUG | https://api.groq.com:443 "POST /openai/v1/chat/completions HTTP/1.1" 200 None
+2025-08-05 16:00:34,984 | DEBUG | Loading dataset from CSV...
+2025-08-05 16:00:35,210 | DEBUG | Loaded dataset with shape: (16598, 11)
+2025-08-05 16:00:35,220 | DEBUG | 🔍 Initial dataframe shape: (16598, 11)
+2025-08-05 16:00:35,221 | DEBUG | 🧪 Applying filter: Year == 2012
+2025-08-05 16:00:35,227 | DEBUG | ✅ Filtered dataframe shape: (657, 11)
+2025-08-05 16:00:35,228 | DEBUG | 📈 Performing 'max' on column 'Global_Sales' without grouping
+2025-08-05 16:00:35,241 | DEBUG | ✅ Query executed successfully. Result length: 1
+2025-08-05 16:08:26,339 | INFO | 📥 Received query: When was Call of Duty: Black Ops II released
+2025-08-05 16:08:26,371 | DEBUG | Starting new HTTPS connection (1): api.groq.com:443
+2025-08-05 16:08:26,904 | DEBUG | https://api.groq.com:443 "POST /openai/v1/chat/completions HTTP/1.1" 200 None
+2025-08-05 16:08:26,949 | DEBUG | 🔍 Initial dataframe shape: (16598, 11)
+2025-08-05 16:08:26,957 | DEBUG | 🧪 Applying filter: Name eq Call of Duty: Black Ops II
+2025-08-05 16:08:26,997 | DEBUG | ✅ Filtered dataframe shape: (4, 11)
+2025-08-05 16:08:27,008 | DEBUG | 📈 Performing 'get' on column 'Year' without grouping
+2025-08-05 16:08:27,015 | DEBUG | ✅ Query executed successfully. Result length: N/A
+2025-08-05 16:08:52,245 | INFO | 📥 Received query: Release year of Call of Duty: Black Ops II
+2025-08-05 16:08:52,272 | DEBUG | Starting new HTTPS connection (1): api.groq.com:443
+2025-08-05 16:08:53,040 | DEBUG | https://api.groq.com:443 "POST /openai/v1/chat/completions HTTP/1.1" 200 None
+2025-08-05 16:08:53,098 | DEBUG | 🔍 Initial dataframe shape: (16598, 11)
+2025-08-05 16:08:53,105 | DEBUG | 🧪 Applying filter: Name eq Call of Duty: Black Ops II
+2025-08-05 16:08:53,141 | DEBUG | ✅ Filtered dataframe shape: (4, 11)
+2025-08-05 16:08:53,143 | DEBUG | 📈 Performing 'lookup' on column 'Year' without grouping
+2025-08-05 16:08:53,148 | DEBUG | ✅ Query executed successfully. Result length: N/A
+2025-08-05 16:10:13,884 | INFO | 📥 Received query: Publisher of Call of Duty: Black Ops II
+2025-08-05 16:10:13,934 | DEBUG | Starting new HTTPS connection (1): api.groq.com:443
+2025-08-05 16:10:14,574 | DEBUG | https://api.groq.com:443 "POST /openai/v1/chat/completions HTTP/1.1" 200 None
+2025-08-05 16:10:14,617 | DEBUG | 🔍 Initial dataframe shape: (16598, 11)
+2025-08-05 16:10:14,622 | DEBUG | 🧪 Applying filter: Name eq Call of Duty: Black Ops II
+2025-08-05 16:10:14,644 | DEBUG | 🧪 Applying filter: Name eq Call of Duty: Black Ops II
+2025-08-05 16:10:14,653 | DEBUG | ✅ Filtered dataframe shape: (4, 11)
+2025-08-05 16:10:14,659 | DEBUG | ✅ Query executed successfully. Result length: N/A
+2025-08-05 17:07:55,488 | INFO | 📥 Received query: Most sold games in Europe
+2025-08-05 17:07:55,490 | DEBUG | Starting new HTTPS connection (1): api.groq.com:443
+2025-08-05 17:07:55,990 | DEBUG | https://api.groq.com:443 "POST /openai/v1/chat/completions HTTP/1.1" 200 None
+2025-08-05 17:07:55,991 | DEBUG | Loading dataset from CSV...
+2025-08-05 17:07:56,015 | DEBUG | Loaded dataset with shape: (16598, 11)
+2025-08-05 17:07:56,016 | DEBUG | 🔍 Initial dataframe shape: (16598, 11)
+2025-08-05 17:07:56,016 | DEBUG | 🧪 Applying filter: EU_Sales > 0
+2025-08-05 17:07:56,017 | DEBUG | ✅ Filtered dataframe shape: (10868, 11)
+2025-08-05 17:07:56,017 | DEBUG | 🔗 Grouping by 'Name', applying action 'sum' on 'EU_Sales'
+2025-08-05 17:07:56,027 | WARNING | ⚠️ Sorting failed: sort_values() got an unexpected keyword argument 'by' — skipping sort.
+2025-08-05 17:07:56,038 | DEBUG | ✅ Query executed successfully. Result length: 7022
+2025-08-05 17:08:37,095 | INFO | 📥 Received query: List of games released in 2012
+2025-08-05 17:08:37,096 | DEBUG | Starting new HTTPS connection (1): api.groq.com:443
+2025-08-05 17:08:37,722 | DEBUG | https://api.groq.com:443 "POST /openai/v1/chat/completions HTTP/1.1" 200 None
+2025-08-05 17:08:37,724 | DEBUG | 🔍 Initial dataframe shape: (16598, 11)
+2025-08-05 17:08:37,724 | DEBUG | 🧪 Applying filter: Year = 2012
+2025-08-05 17:08:37,724 | DEBUG | ✅ Filtered dataframe shape: (657, 11)
+2025-08-05 17:08:37,724 | DEBUG | ✅ Query executed successfully. Result length: N/A
